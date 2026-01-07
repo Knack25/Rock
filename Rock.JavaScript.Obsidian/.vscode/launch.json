@@ -5,7 +5,7 @@
             "request": "launch",
             "port": 9222,
             "type": "chrome",
-            "url": "http://localhost:6229",
+            "url": "http://10.1.1.83:6229",
             "webRoot": "${workspaceFolder:Rock.JavaScript.Obsidian}/dist/"
         },
         {
@@ -13,7 +13,7 @@
             "request": "attach",
             "port": 9222,
             "type": "chrome",
-            "urlFilter": "http://localhost:6229*",
+            "urlFilter": "http://10.1.1.83:6229*",
             "webRoot": "${workspaceFolder:Rock.JavaScript.Obsidian}/dist/"
         },
         {
@@ -21,7 +21,7 @@
             "request": "launch",
             "port": 9222,
             "type": "chrome",
-            "url": "http://localhost:6229",
+            "url": "http://10.1.1.83:6229",
             "webRoot": "${workspaceFolder:Rock.JavaScript.Obsidian.Blocks}/dist/"
         },
         {
@@ -29,7 +29,7 @@
             "request": "attach",
             "port": 9222,
             "type": "chrome",
-            "urlFilter": "http://localhost:6229*",
+            "urlFilter": "http://10.1.1.83:6229*",
             "webRoot": "${workspaceFolder:Rock.JavaScript.Obsidian.Blocks}/dist/"
         },
         {
