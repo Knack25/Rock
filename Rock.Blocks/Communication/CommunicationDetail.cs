@@ -602,7 +602,7 @@ namespace Rock.Blocks.Communication
                 recipientRows
                     .OrderByDescending( r => r.LastActivityDateTime )
                     .ThenBy( r => r.Person.LastName )
-                    .ThenBy( r => r.Person.FirstName )
+                    .ThenBy( r => r.Person.NickName )
             );
 
             return ActionOk( new CommunicationRecipientGridDataBag
@@ -806,7 +806,7 @@ namespace Rock.Blocks.Communication
                                 if ( pageCache.PageRoutes.Count == 1 )
                                 {
                                     pageReference.RouteId = pageCache.PageRoutes.First().Id;
-                                }                               
+                                }
                             }
 
                             redirectUrl = pageReference.BuildUrl();
@@ -2049,7 +2049,7 @@ namespace Rock.Blocks.Communication
                 {
                     Label = Gender.Male.ConvertToString(),
                     Value = GetPercentage( maleCount ),
-                    Color = "--color-info-tint"
+                    Color = "--color-gender-male-strong"
                 } );
             }
 
@@ -2059,7 +2059,7 @@ namespace Rock.Blocks.Communication
                 {
                     Label = Gender.Female.ConvertToString(),
                     Value = GetPercentage( femaleCount ),
-                    Color = "--color-danger-tint"
+                    Color = "--color-gender-female-strong"
                 } );
             }
 
