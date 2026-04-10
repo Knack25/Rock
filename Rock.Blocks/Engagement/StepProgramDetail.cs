@@ -72,7 +72,7 @@ namespace Rock.Blocks.Engagement
     [BooleanField
         ( "Enable List View Display Options",
           Key = AttributeKey.EnableListViewDisplayOptions,
-          Description = "Allows selecting a display mode of Grid or Cards.",
+          Description = "Allows selecting the display mode when showing steps on a person's profile page.",
           DefaultValue = "false",
           Order = 3 )]
 
@@ -355,6 +355,7 @@ namespace Rock.Blocks.Engagement
             } ).ToList();
 
             bag.WorkflowTriggers = entity.StepWorkflowTriggers
+                .Where( wt => wt.StepTypeId == null )
                 .OrderBy( c => c.TypeName ).ThenBy( c => c.TriggerType.ConvertToString() )
                 .Select( wt => new StepProgramWorkflowTriggerBag()
                 {
@@ -633,7 +634,6 @@ namespace Rock.Blocks.Engagement
                 workflowTrigger.TriggerType = stateTrigger.WorkflowTrigger.Value.ConvertToEnum<StepWorkflowTrigger.WorkflowTriggerCondition>();
                 workflowTrigger.TypeQualifier = qualifierSettings.ToSelectionString();
                 workflowTrigger.WorkflowName = stateTrigger.WorkflowType.Text;
-                workflowTrigger.StepTypeId = null;
             }
         }
 
